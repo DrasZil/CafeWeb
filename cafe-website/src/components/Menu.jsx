@@ -5,7 +5,8 @@ import { menuItems, categoryMeta } from "./MenuList"
 import MenuItemModal from "./MenuItemModal"
 
 export default function Menu() {
-    const categories = [...new Set(menuItems.map(item => item.category))];
+    const baseCategories = [...new Set(menuItems.map(item => item.category))];
+    const categories = ["Favorites", "Best Seller", ...baseCategories];
     const [openCategory, setOpenCategory] = useState("Hot Coffee");
     const categoryRefs = useRef({});
     const [selectedItem, setSelectedItem] = useState(null);
@@ -68,11 +69,20 @@ export default function Menu() {
                     className="overflow-hidden">
                         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-4 sm:p-6">
                         {menuItems
-                            .filter(item => item.category === category)
+                            .filter(item => {
+                                if (category === "Favorites") {
+                                    return item.isFavorite;
+                                }
+                                if (category === "Best Seller") {
+                                    return item.isBestSeller;
+                                }
+                                return item.category === category
+                            })
                             .map((item, index) => (
                                 <MenuItem 
                                     key={index}
                                     {...item}
+                                    activeCategory={category}
                                     isActive={isOpen && selectedItem?.name === item.name}
                                     onClick={() => setSelectedItem(item)}
                                     className="bg-espressoSoft border border-bean/40 rounded-2xl

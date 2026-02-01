@@ -1,7 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { getActiveMenuTags } from "./MenuList";
 
 export default function MenuItemModal( { item, onClose } ) {
     if (!item) return null;
+    const tags = getActiveMenuTags(item);
 
     return (
         <AnimatePresence>
@@ -26,8 +28,20 @@ export default function MenuItemModal( { item, onClose } ) {
                     className="w-full h-full object-cover"/> 
                     </div>
 
-                    <h3 className="text-2xl font-semibold text-latte mt-6">
+                    <h3 className="text-2xl font-semibold text-latte mt-6 flex flex-wrap items-center gap-2">
                         {item.name}
+                        
+                        {tags.map(tag => {
+                            const Icon = tag.icon;
+                            return (
+                                <span 
+                                key={tag.key}
+                                className={`flex items-center gap-1 text-sm ${tags.bg} ${tags.text} px-3 py-1 rounded-full`}>
+
+                                <Icon size={14}/>
+                            </span>
+                            )
+                        })}
                     </h3>
 
                     <p className="text-muted mt-2">
