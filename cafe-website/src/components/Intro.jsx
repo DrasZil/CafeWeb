@@ -10,7 +10,7 @@ export default function Intro({ show}) {
                 className="fixed inset-0 z-[100] flex items-center justify-center bg-espresso"
                 initial={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 1.6, ease: "easeInOut"}}
+                transition={{ duration: 2.5, ease: "easeInOut"}}
             >
 
                 {/*background texture*/}
@@ -19,7 +19,7 @@ export default function Intro({ show}) {
                 style={{ backgroundImage: "url('/Hero_bg.jpg')"}}
                 initial={{scale: 1.1 }}
                 animate={{scale: 1}}
-                transition={{ duration: 2, ease: "easeOut"}}
+                transition={{ duration: 2.3, ease: "easeOut"}}
                 />
 
                 {/*Dark coffee overlay*/}
