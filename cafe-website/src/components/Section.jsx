@@ -5,7 +5,7 @@ export default function Section( { children } ) {
         <motion.section
             initial={{ opacity: 0, y: 60}}
             whileInView={{opacity: 1, y: 0}}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className='w-full min-h-screen bg-espressoSoft flex items-center'
         >
