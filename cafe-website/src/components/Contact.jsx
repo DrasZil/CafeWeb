@@ -1,6 +1,7 @@
 import { MapPin, Clock, Phone, Instagram, Facebook} from "lucide-react"
 import InstagramIcon from "../assets/icons/instagram"
 import FacebookIcon from "../assets/icons/facebook"
+import TiktokIcon from "../assets/icons/tiktok"
 
 export default function Contact() {
     return (
@@ -54,6 +55,13 @@ export default function Contact() {
                             rel="noopener noreferrer"
                             className="group">
                                 <FacebookIcon className="w-6 h-6 text-muted group-hover:text-latte transition" />
+                            </a>
+
+                            <a href="https://www.tiktok.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group">
+                                <TiktokIcon className="w-6 h-6 text-muted group-hover:text-latte transition" />
                             </a>
                         </div>
                     </div>
