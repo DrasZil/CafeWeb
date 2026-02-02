@@ -21,7 +21,7 @@ export default function Footer() {
 
           <p>
             Menu item images are temporary placeholders sourced from publicly
-            available images on Google and are used strictly for visual
+            available images on Google/unsplash and are used strictly for visual
             representation. These images will be replaced with properly licensed
             or original content before any commercial use.
           </p>
