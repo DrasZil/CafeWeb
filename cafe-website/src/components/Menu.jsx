@@ -6,7 +6,7 @@ import MenuItemModal from "./MenuItemModal"
 
 export default function Menu() {
     const baseCategories = [...new Set(menuItems.map(item => item.category))];
-    const categories = ["Favorites", "Best Seller", ...baseCategories];
+    const categories = ["Favorites", "New Addition", ...baseCategories];
     const [openCategory, setOpenCategory] = useState("Hot Coffee");
     const categoryRefs = useRef({});
     const [selectedItem, setSelectedItem] = useState(null);
@@ -73,8 +73,8 @@ export default function Menu() {
                                 if (category === "Favorites") {
                                     return item.isFavorite;
                                 }
-                                if (category === "Best Seller") {
-                                    return item.isBestSeller;
+                                if (category === "New Addition") {
+                                    return item.isNewAddition;
                                 }
                                 return item.category === category
                             })

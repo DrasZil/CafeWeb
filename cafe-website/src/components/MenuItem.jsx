@@ -4,11 +4,11 @@ import { getActiveMenuTags } from './MenuList';
 
 export default function MenuItem( { 
     name, description, price, image, isFavorite = false, 
-    isBestSeller = false, className = "", isActive = false, 
+    isNewAddition = false, className = "", isActive = false, 
     activeCategory, onClick 
 } ) {
 
-    const item = { isFavorite, isBestSeller };
+    const item = { isFavorite, isNewAddition };
     const tags = getActiveMenuTags(item, activeCategory);
     return (
         <motion.div 

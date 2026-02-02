@@ -8,12 +8,12 @@ import {
   Leaf,
   Cookie,
   Crown,
-  Gem,
+  Plus,
 } from "lucide-react";
 
 export const categoryMeta = {
   Favorites: { icon: Crown },
-  "Best Seller": { icon: Gem },
+  "New Addition": { icon: Plus },
   "Hot Coffee": { icon: Coffee },
   "Iced Coffee": { icon: Snowflake },
   Frappes: { icon: CupSoda },
@@ -29,7 +29,7 @@ export const menuItems = [
     image: "/espresso.jpg",
     category: "Hot Coffee",
     isFavorite: true,
-    isBestSeller: true,
+    isNewAddition: true,
     sizes: [
       { label: "Single", price: "₱120", available: true },
       { label: "Double", price: "₱160", available: true },
@@ -45,7 +45,7 @@ export const menuItems = [
     image: "/americano.jpg",
     category: "Hot Coffee",
     isFavorite: false,
-    isBestSeller: false,
+    isNewAddition: false,
     sizes: [
       { label: "Small", price: "₱140", available: true },
       { label: "Medium", price: "₱160", available: true },
@@ -62,7 +62,7 @@ export const menuItems = [
     image: "/caffeLatte.jpg",
     category: "Hot Coffee",
     isFavorite: true,
-    isBestSeller: false,
+    isNewAddition: false,
     sizes: [
       { label: "Small", price: "₱150", available: true },
       { label: "Medium", price: "₱170", available: true },
@@ -79,7 +79,7 @@ export const menuItems = [
     image: "/cappuccino.jpg",
     category: "Hot Coffee",
     isFavorite: false,
-    isBestSeller: false,
+    isNewAddition: false,
     sizes: [
       { label: "Small", price: "₱140", available: true },
       { label: "Medium", price: "₱160", available: true },
@@ -96,7 +96,7 @@ export const menuItems = [
     image: "/flatWhite.jpg",
     category: "Hot Coffee",
     isFavorite: false,
-    isBestSeller: false,
+    isNewAddition: false,
     sizes: [
       { label: "Regular", price: "₱170", available: true },
       { label: "Large", price: "₱190", available: true },
@@ -114,7 +114,7 @@ export const menuItems = [
     image: "/icedAmericano.jpg",
     category: "Iced Coffee",
     isFavorite: false,
-    isBestSeller: true,
+    isNewAddition: true,
     sizes: [
       { label: "Medium", price: "₱160", available: true },
       { label: "Large", price: "₱180", available: true },
@@ -130,7 +130,7 @@ export const menuItems = [
     image: "/iced_latte.jpg",
     category: "Iced Coffee",
     isFavorite: false,
-    isBestSeller: true,
+    isNewAddition: true,
     sizes: [
       { label: "Medium", price: "₱180", available: true },
       { label: "Large", price: "₱200", available: true },
@@ -148,7 +148,7 @@ export const menuItems = [
     image: "/coffeeFrappe.jpg",
     category: "Frappes",
     isFavorite: false,
-    isBestSeller: false,
+    isNewAddition: false,
     sizes: [
       { label: "Regular", price: "₱210", available: true },
       { label: "Large", price: "₱230", available: true },
@@ -164,7 +164,7 @@ export const menuItems = [
     image: "/caramelFrappe.jpg",
     category: "Frappes",
     isFavorite: true,
-    isBestSeller: false,
+    isNewAddition: false,
     sizes: [
       { label: "Regular", price: "₱220", available: true },
       { label: "Large", price: "₱240", available: true },
@@ -182,7 +182,7 @@ export const menuItems = [
     image: "/croissant.jpg",
     category: "Pastries",
     isFavorite: false,
-    isBestSeller: true,
+    isNewAddition: true,
     price: "₱110",
     available: true,
     orderLinks: [
@@ -196,7 +196,7 @@ export const menuItems = [
     image: "/chocolateMuffin.jpg",
     category: "Pastries",
     isFavorite: false,
-    isBestSeller: false,
+    isNewAddition: false,
     price: "₱120",
     available: true,
     orderLinks: [
@@ -216,10 +216,10 @@ export const MENU_TAGS = [
     text: "text-espresso",
   },
   {
-    key: "bestSeller",
-    label: "Best Seller",
-    check: (item) => item.isBestSeller,
-    icon: Gem,
+    key: "newAddition",
+    label: "New Addition",
+    check: (item) => item.isNewAddition,
+    icon: Plus,
     bg: "bg-emerald-400",
     text: "text-espresso",
   },
@@ -232,7 +232,7 @@ export function getActiveMenuTags(item, activeCategory = null){
 
     //if inside their respective category, only show matching tag
     if (activeCategory === "Favorites") return tag.key === "favorite";
-    if (activeCategory === "Best Seller") return tag.key === "bestSeller";
+    if (activeCategory === "New Addition") return tag.key === "newAddition";
 
     //else show all applicable tags
     return true;

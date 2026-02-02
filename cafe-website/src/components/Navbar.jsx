@@ -55,6 +55,14 @@ useEffect(() => {
   return () => window.removeEventListener("resize", handleResize);
 }, [])
 
+const NAV_LINKS = [
+  { id: "home", label: "Home" },
+  { id: "menu", label: "Product Menu" },
+  { id: "about", label: "About Us" },
+  { id: "gallery", label: "Cafe Gallery" },
+  { id: "reviews", label: "Cafe Reviews" },
+  { id: "contact", label: "Contact Us" },
+];
 
 
 
@@ -103,26 +111,29 @@ useEffect(() => {
          */}
         
         <ul className="hidden md:flex gap-8 text-sm text-cream/80">
-        {["home", "menu", "about", "contact"].map(link => (
-          <motion.li key={link} className="group"
-          whileHover={{y: -2}}
-          transition={{ type: "spring", stiffness: 300}}>
-            <a href={`#${link}`}
-            className="relative text-muted hover:text-latte transition-colors duration-300" 
+          {NAV_LINKS.map(({ id, label }) => (
+            <motion.li
+              key={id}
+              className="group"
+              whileHover={{ y: -2 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
-              {link.charAt(0).toUpperCase() + link.slice(1)}
+              <a
+                href={`#${id}`}
+                className="relative text-muted hover:text-latte transition-colors duration-300"
+              >
+                {label}
 
-               {/* underline active section effect on nav */}
-              <span
-                className={`absolute left-0 -bottom-1 h-[2px] bg-latte transition-all duration-300 cursor-pointer
-                  ${active === link ? "w-full" : "w-0 group-hover:w-full"}
-                `}
-              />
-            </a>
-          </motion.li>
-        )
-        )}
-        </ul>
+                <span
+                  className={`absolute left-0 -bottom-1 h-[2px] bg-latte transition-all duration-300
+                    ${active === id ? "w-full" : "w-0 group-hover:w-full"}
+                  `}
+                />
+              </a>
+            </motion.li>
+          ))}
+      </ul>
+
       </div>
 
       <AnimatePresence>
@@ -136,34 +147,38 @@ useEffect(() => {
           transition={{ duration: 0.25, ease: "easeOut"}}
         >
           <ul className="flex flex-col items-center gap-6 py-6 text-cream">
-            {["home", "menu", "about", "contact"].map(link => (
-              <motion.li key={link} className="relative" whileHover="hover" initial="rest">
-
-              {/**bg highlight */}
-                <motion.span 
-                  variants={{ 
+            {NAV_LINKS.map(({ id, label }) => (
+              <motion.li
+                key={id}
+                className="relative"
+                whileHover="hover"
+                initial="rest"
+              >
+                {/* background highlight */}
+                <motion.span
+                  variants={{
                     rest: { opacity: 0, scaleX: 0 },
-                    hover: { opacity: 1, scaleX: 1 }
+                    hover: { opacity: 1, scaleX: 1 },
                   }}
                   transition={{ duration: 0.25 }}
                   className="absolute inset-0 bg-latte/10 rounded-md origin-left"
                 />
 
-                {/**links */}
                 <motion.a
-                  href={`#${link}`}
+                  href={`#${id}`}
                   onClick={() => setOpen(false)}
                   className={`relative z-10 block px-6 py-2 text-lg cursor-pointer ${
-                              active === link ? "text-latte" : "text-cream"
-                            }`}
-                  whileTap={{ scale: 0.95}}
-                  transition={{ type: "spring", stiffness: 300}}
+                    active === id ? "text-latte" : "text-cream"
+                  }`}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
-                  {link.charAt(0).toUpperCase() + link.slice(1)}
+                  {label}
                 </motion.a>
               </motion.li>
             ))}
           </ul>
+
         </motion.div>
       )}  
       </AnimatePresence>

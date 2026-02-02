@@ -9,6 +9,8 @@ import Intro from './components/Intro.jsx'
 import { useState, useEffect } from 'react'
 import LoadingScreen from './components/LoadingScreen.jsx'
 import { AnimatePresence } from 'framer-motion'
+import ReviewSection from './components/ReviewSection.jsx'
+import PhotoWall from './components/PhotoWall.jsx'
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -58,6 +60,14 @@ const timer = setTimeout(() => {
 
                 <Section>
                   <About />
+                </Section>
+
+                <Section>
+                  <PhotoWall />
+                </Section>
+
+                <Section>
+                  <ReviewSection/>
                 </Section>
 
                 <Section>

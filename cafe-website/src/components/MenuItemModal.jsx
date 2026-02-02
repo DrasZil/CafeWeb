@@ -28,15 +28,15 @@ export default function MenuItemModal( { item, onClose } ) {
                     className="w-full h-full object-cover"/> 
                     </div>
 
-                    <h3 className="text-2xl font-semibold text-latte mt-6 flex flex-wrap items-center gap-2">
+                    <h3 className="text-2xl font-semibold text-latte mt-6 flex flex-wrap items-center gap-3">
                         {item.name}
                         
                         {tags.map(tag => {
                             const Icon = tag.icon;
                             return (
-                                <span 
+                               <span 
                                 key={tag.key}
-                                className={`flex items-center gap-1 text-sm ${tags.bg} ${tags.text} px-3 py-1 rounded-full`}>
+                                className={`flex items-center text-sm ${tags.bg} ${tags.text} py-1 rounded-full`}>
 
                                 <Icon size={14}/>
                             </span>
