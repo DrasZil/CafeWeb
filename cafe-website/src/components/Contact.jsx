@@ -2,6 +2,7 @@ import { MapPin, Clock, Phone, Instagram, Facebook} from "lucide-react"
 import InstagramIcon from "../assets/icons/instagram"
 import FacebookIcon from "../assets/icons/facebook"
 import TiktokIcon from "../assets/icons/tiktok"
+import { Mail } from "lucide-react";
 
 export default function Contact() {
     return (
@@ -33,8 +34,21 @@ export default function Contact() {
                         <Phone className="w-6 h-6 text-latte"/>
                         <div>
                             <p className="text-latte font-medium">Contact</p>
-                            <p className="text-muted text-s">+63 912 345 6789</p>
+                            <p className="text-muted text-s">+63 9930910603</p>
                         </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                    <Mail className="w-6 h-6 text-latte" />
+                    <div>
+                        <p className="text-latte font-medium">Email</p>
+                        <a
+                        href="mailto:ledesmaoliverdelfin@gmail.com"
+                        className="text-muted text-s hover:underline"
+                        >
+                        ledesmaoliverdelfin@gmail.com
+                        </a>
+                    </div>
                     </div>
 
                     <div className="pt-4 border-t border-bean/30">

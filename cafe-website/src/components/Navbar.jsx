@@ -103,7 +103,10 @@ const NAV_LINKS = [
 
         
         <h1 className="text-xl font-semibold text-latte">
-          Café DrasZil
+          <a href="#home" className="Decoration-none">
+            Café DrasZil
+          </a>
+    
         </h1>
 
         {/**desktop menu,
