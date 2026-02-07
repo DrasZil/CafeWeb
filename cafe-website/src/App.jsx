@@ -41,7 +41,7 @@ const timer = setTimeout(() => {
 
  return (
   
-    <div className="bg-espresso text-latte font-sans min-h-screen">
+    <div className="bg-espresso text-latte font-sans min-h-screen overflow-x-hidden">
       <AnimatePresence mode="wait">
         {loading ? (
           <LoadingScreen key="loader" />

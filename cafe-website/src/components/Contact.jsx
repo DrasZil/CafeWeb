@@ -7,12 +7,12 @@ import { Mail } from "lucide-react";
 export default function Contact() {
     return (
         <div id="contact">
-            <h2 className="text-3xl text-latte md:text-4xl font-medium tracking-wide mb-16 text-center">
+            <h2 className="text-3xl text-latte md:text-4xl py-3 font-medium tracking-wide mb-16 text-center">
                 Visit Us!
             </h2>
 
-            <div className="grid gap-12 md:grid-cols-2 items-start">
-                <div className="space-y-6 bg-espressoSoft/80 rounded-2xl p-8 
+            <div className="grid gap-8 md:gap-12 md:grid-cols-2 items-start">
+                <div className="w-full space-y-6 sm:p-6 md:p-8 bg-espressoSoft/80 rounded-2xl p-8 
                                 shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
                     <div className="flex items-start gap-4">
                         <MapPin className="w-6 h-6 text-latte" />
@@ -81,10 +81,10 @@ export default function Contact() {
                     </div>
                 </div>
 
-                <div className="overflow-hidden rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
+                <div className="w-full space-y-6 bg-espressoSoft/80 rounded-2xl p-5 sm:p-6 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
                     <iframe 
                         title="map"
-                        className="w-full h-[358px]"
+                        className="w-full h-[250px] sm:h-[300px] md:h-[358px]"
                         src="https://maps.google.com/maps?q=iloilo%20city&t=&z=13&ie=UTF8&iwloc=&output=embed"
                         >   
                         </iframe>
